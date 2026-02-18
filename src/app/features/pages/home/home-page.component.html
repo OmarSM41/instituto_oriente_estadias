@@ -1,0 +1,86 @@
+<div class="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <h1 class="text-2xl font-bold text-indigo-600">Instituto Oriente</h1>
+        <ul class="hidden md:flex gap-8">
+          <li><a routerLink="/blog" class="text-gray-700 hover:text-indigo-600 transition">Blog</a></li>
+          <li><a routerLink="/gallery" class="text-gray-700 hover:text-indigo-600 transition">Galería</a></li>
+          <li><a routerLink="/formulario" class="text-gray-700 hover:text-indigo-600 transition">Formulario</a></li>
+          <li><a routerLink="/shop" class="text-gray-700 hover:text-indigo-600 transition">Tienda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center">
+      <h2 class="text-5xl font-bold text-gray-900 mb-6">Bienvenido al Instituto Oriente</h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Formación de excelencia para tu futuro profesional</p>
+      <button class="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
+        Solicitar Información
+      </button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="text-3xl font-bold text-gray-900 mb-12 text-center">Sobre Nosotros</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-4">Misión</h4>
+          <p class="text-gray-700">Formar profesionales competentes y éticos para transformar la sociedad.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-4">Visión</h4>
+          <p class="text-gray-700">Ser la institución líder en educación de calidad en la región.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-4">Valores</h4>
+          <p class="text-gray-700">Excelencia, integridad, inclusión y responsabilidad social.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section id="programs" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="text-3xl font-bold text-gray-900 mb-12 text-center">Nuestros Programas</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        @for (program of ['Ingeniería', 'Administración', 'Tecnología', 'Educación']; track $index) {
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+            <h4 class="text-lg font-semibold text-indigo-600 mb-3">{{ program }}</h4>
+            <p class="text-gray-700 text-sm">Programa especializado de alta calidad y reconocimiento nacional.</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-indigo-600 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="text-3xl font-bold mb-6">¿Tienes Preguntas?</h3>
+      <p class="text-lg mb-8">Contáctanos para más información sobre nuestros programas</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:info@institutooriente.edu" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+          Email
+        </a>
+        <a href="tel:+1234567890" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+          Llamar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; 2026 Instituto Oriente. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</div>

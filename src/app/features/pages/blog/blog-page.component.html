@@ -1,0 +1,131 @@
+<div class="min-h-screen bg-gray-50 flex flex-col">
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a routerLink="/" class="text-2xl font-bold text-indigo-600">Instituto Oriente</a>
+        <a routerLink="/" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Volver al Inicio
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-linear-to-r from-indigo-600 to-blue-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Blog del Instituto Oriente</h1>
+      <p class="text-lg opacity-90 max-w-2xl mx-auto">Explora las últimas noticias, consejos académicos y recursos diseñados para potenciar tu crecimiento profesional.</p>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grow">
+
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+      <div class="flex flex-wrap gap-2">
+        <button class="px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-medium">Todos</button>
+        <button class="px-4 py-2 bg-white text-gray-600 hover:bg-gray-100 rounded-full text-sm font-medium transition">Noticias</button>
+        <button class="px-4 py-2 bg-white text-gray-600 hover:bg-gray-100 rounded-full text-sm font-medium transition">Académico</button>
+        <button class="px-4 py-2 bg-white text-gray-600 hover:bg-gray-100 rounded-full text-sm font-medium transition">Tecnología</button>
+      </div>
+
+      <div class="relative w-full md:w-64">
+        <input type="text" placeholder="Buscar artículo..."
+               class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+        <svg class="w-5 h-5 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (post of [
+        { cat: 'Académico', title: '5 Consejos para estudiar mejor', img: 'https://picsum.photos/id/1/600/400' },
+        { cat: 'Tecnología', title: 'El futuro de la IA en la educación', img: 'https://picsum.photos/id/180/600/400' },
+        { cat: 'Noticias', title: 'Nuevos convenios internacionales', img: 'https://picsum.photos/id/20/600/400' },
+        { cat: 'Vida Estudiantil', title: 'Ganadores del torneo de debate', img: 'https://picsum.photos/id/42/600/400' },
+        { cat: 'Carreras', title: '¿Por qué estudiar Ingeniería hoy?', img: 'https://picsum.photos/id/3/600/400' },
+        { cat: 'Eventos', title: 'Próxima Feria del Empleo 2026', img: 'https://picsum.photos/id/48/600/400' }
+      ]; track $index) {
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
+          <div class="relative h-48 overflow-hidden">
+            <img [src]="post.img" [alt]="post.title" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              {{ post.cat }}
+            </span>
+          </div>
+
+          <div class="p-6 flex flex-col grow">
+            <div class="flex items-center text-gray-400 text-xs mb-3">
+              <span class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                15 May 2026
+              </span>
+              <span class="mx-2">•</span>
+              <span>5 min lectura</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-indigo-600 transition">
+              <a href="#">{{ post.title }}</a>
+            </h3>
+
+            <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+              Descubre cómo mejorar tu rendimiento académico con estas estrategias probadas por nuestros expertos...
+            </p>
+
+            <div class="mt-auto border-t pt-4">
+              <a href="#" class="text-indigo-600 font-semibold text-sm inline-flex items-center group">
+                Leer más
+                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="mt-16 flex justify-center gap-2">
+      <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 text-gray-500 hover:bg-indigo-600 hover:text-white transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-600 text-white font-bold">1</button>
+      <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100 transition">2</button>
+      <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100 transition">3</button>
+      <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 text-gray-500 hover:bg-indigo-600 hover:text-white transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-400 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+        <div>
+          <h4 class="text-white font-bold mb-4">Instituto Oriente</h4>
+          <p class="text-sm">Comprometidos con la educación y el desarrollo de nuestros estudiantes desde 2026.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Newsletter</h4>
+          <div class="flex">
+            <input type="email" placeholder="Tu email" class="bg-gray-800 border-none rounded-l-lg px-4 py-2 w-full focus:ring-2 focus:ring-indigo-500 text-white text-sm">
+            <button class="bg-indigo-600 text-white px-4 py-2 rounded-r-lg hover:bg-indigo-700 transition font-medium text-sm">Unirse</button>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Síguenos</h4>
+          <div class="flex justify-center md:justify-start gap-4">
+            <div class="w-8 h-8 bg-gray-800 rounded-full hover:bg-indigo-600 transition cursor-pointer"></div>
+            <div class="w-8 h-8 bg-gray-800 rounded-full hover:bg-indigo-600 transition cursor-pointer"></div>
+            <div class="w-8 h-8 bg-gray-800 rounded-full hover:bg-indigo-600 transition cursor-pointer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm">
+        <p>&copy; 2026 Instituto Oriente. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</div>
