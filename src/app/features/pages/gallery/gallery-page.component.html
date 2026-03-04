@@ -1,9 +1,13 @@
 <div class="min-h-screen bg-gray-50 flex flex-col">
-  <nav class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="bg-black shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a routerLink="/" class="text-2xl font-bold text-indigo-600 font-serif">Instituto Oriente</a>
-        <a routerLink="/" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition font-medium">
+        <img
+          src="/assets/logo-white-h.png"
+          alt="Logo Instituto Oriente"
+          class="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+        />
+        <a routerLink="/" class="flex items-center gap-2 text-gray-200 hover:text-indigo-600 transition font-medium">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -15,8 +19,8 @@
 
   <header class="bg-linear-to-r from-indigo-600 to-blue-600 text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Galería Institucional</h1>
-      <p class="text-lg opacity-90 max-w-2xl mx-auto">Conoce nuestras instalaciones, eventos destacados y la vida estudiantil en el Instituto Oriente.</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Galería</h1>
+      <p class="text-lg opacity-90 max-w-2xl mx-auto"></p>
     </div>
   </header>
 
@@ -24,49 +28,46 @@
 
     <div class="flex flex-wrap justify-center gap-4 mb-12">
       <button class="px-6 py-2 bg-indigo-600 text-white rounded-full shadow-md font-medium transition hover:bg-indigo-700">Todas</button>
-      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Instalaciones</button>
-      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Eventos</button>
-      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Deportes</button>
-      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Laboratorios</button>
+      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Inaguración</button>
+      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Misa de Inicio</button>
+      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Presentación de Porras</button>
+      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Día 1</button>
+      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Día 2</button>
+      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Día 3</button>
+      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Día 4</button>
+      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Clausura</button>
     </div>
 
     <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
       @for (item of [
-        { title: 'Campus Principal', cat: 'Instalaciones', img: 'https://picsum.photos/id/122/800/600' },
-        { title: 'Laboratorio de Cómputo', cat: 'Tecnología', img: 'https://picsum.photos/id/160/600/800' },
-        { title: 'Graduación 2025', cat: 'Eventos', img: 'https://picsum.photos/id/6/800/800' },
-        { title: 'Biblioteca Central', cat: 'Instalaciones', img: 'https://picsum.photos/id/367/800/500' },
-        { title: 'Cancha de Fútbol', cat: 'Deportes', img: 'https://picsum.photos/id/537/600/400' },
-        { title: 'Clase de Ciencias', cat: 'Académico', img: 'https://picsum.photos/id/445/800/1000' },
-        { title: 'Auditorio', cat: 'Eventos', img: 'https://picsum.photos/id/452/800/600' },
-        { title: 'Cafetería', cat: 'Instalaciones', img: 'https://picsum.photos/id/429/700/900' },
-        { title: 'Taller de Arte', cat: 'Cultura', img: 'https://picsum.photos/id/454/800/600' }
-      ]; track $index) {
-        <div class="relative group overflow-hidden rounded-2xl bg-gray-200 break-inside-avoid shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer">
-          <img [src]="item.img" [alt]="item.title" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
+  { title: 'Ceremonia de Inauguración', cat: 'Inauguración', img: 'https://placehold.co/600x400' },
+  { title: 'Competencia de Atletismo', cat: 'Día 1', img: 'https://placehold.co/600x400' },
+  { title: 'Presentación de Porras', cat: 'Porras', img: 'https://placehold.co/800x800' },
+  { title: 'Torneo de Fútbol', cat: 'Deportes', img: 'https://placehold.co/800x500' },
+  { title: 'Partido de Baloncesto', cat: 'Día 2', img: 'https://placehold.co/600x400' },
+  { title: 'Misa de Inicio de Juegos', cat: 'Misa de Inicio', img: 'https://placehold.co/800x1000' },
+  { title: 'Premiación Final', cat: 'Clausura', img: 'https://placehold.co/800x600' },
+  { title: 'Fuego Olímpico', cat: 'Inauguración', img: 'https://placehold.co/800x600' }
+]; track $index) {
+  <div class="relative group overflow-hidden rounded-2xl bg-gray-200 break-inside-avoid shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer">
+    <img [src]="item.img" [alt]="item.title" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
 
-          <div class="absolute inset-0 bg-linear-to-t from-indigo-900/90 via-indigo-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-            <span class="text-indigo-200 text-xs font-bold uppercase tracking-widest mb-1">{{ item.cat }}</span>
-            <h3 class="text-white text-xl font-bold">{{ item.title }}</h3>
-            <div class="mt-3 flex gap-2">
-              <button class="bg-white/20 hover:bg-white/40 backdrop-blur-md p-2 rounded-full transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      }
+    <div class="absolute inset-0 bg-linear-to-t from-indigo-900/90 via-indigo-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+      <span class="text-indigo-200 text-xs font-bold uppercase tracking-widest mb-1">{{ item.cat }}</span>
+      <h3 class="text-white text-xl font-bold">{{ item.title }}</h3>
+      <div class="mt-3 flex gap-2">
+        <button class="bg-white/20 hover:bg-white/40 backdrop-blur-md p-2 rounded-full transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+}
     </div>
 
-    <div class="mt-20 bg-indigo-50 rounded-3xl p-8 md:p-12 text-center border border-indigo-100">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Quieres conocer el campus en persona?</h2>
-      <p class="text-gray-600 mb-8 max-w-xl mx-auto">Agenda una visita guiada y descubre por qué somos la mejor opción para tu futuro profesional.</p>
-      <button class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-700 transition transform hover:-translate-y-1 shadow-lg shadow-indigo-200">
-        Agendar Recorrido
-      </button>
-    </div>
+
   </main>
 
   <footer class="bg-gray-900 text-gray-400 py-12">
