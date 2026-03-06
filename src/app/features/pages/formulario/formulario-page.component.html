@@ -16,7 +16,6 @@
   <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
 
     <h1 class="text-3xl font-bold text-indigo-600 mb-2 text-center">Inscripción a Evento</h1>
-    <p class="text-gray-600 text-center mb-8">Completa el formulario para registrarte en nuestro evento</p>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6">
       <!-- Información Personal -->
@@ -92,13 +91,13 @@
             aria-required="true"
           >
             <option value="" disabled>Selecciona un evento</option>
-            <option value="futbol">Torneo de Fútbol</option>
-            <option value="voleibol">Campeonato de Voleibol</option>
-            <option value="basquetbol">Liga de Basquetbol</option>
-            <option value="tenis">Torneo de Tenis</option>
-            <option value="concierto">Festival de Música</option>
-            <option value="teatro">Festival de Teatro</option>
-            <option value="danza">Competencia de Danza</option>
+            <option value="atletismo">Atletismo</option>
+            <option value="futbol">Fútbol</option>
+            <option value="voleibol">Voleibol</option>
+            <option value="animacion">Animación</option>
+            <option value="baloncesto">Baloncesto</option>
+            <option value="rugby">Rugby</option>
+            <option value="natacion">Natación</option>
           </select>
         </div>
 
