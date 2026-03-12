@@ -4,6 +4,7 @@ import { BlogPage } from './features/pages/blog/blog-page.component';
 import { GalleryPage } from './features/pages/gallery/gallery-page.component';
 import { FormularioPage } from './features/pages/formulario/formulario-page.component';
 import { ShopPage } from './features/pages/shop/shop-page.component';
+import { ResultsPage } from './features/pages/results/results-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomePage, },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'gallery', component: GalleryPage },
   { path: 'formulario', component: FormularioPage },
   { path: 'shop', component: ShopPage },
+  { path: 'results', component: ResultsPage }
 ];
 
