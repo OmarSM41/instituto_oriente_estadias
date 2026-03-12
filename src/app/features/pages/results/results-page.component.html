@@ -1,81 +1,82 @@
-<!-- filepath: c:\Users\bazzi\Desktop\Estadías Proyecto\instituto_oriente\src\app\features\pages\results\results-page.component.html -->
 <div class="min-h-screen bg-gray-50 flex flex-col">
   <nav class="bg-black shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <img
-          src="/assets/logo-white-h.png"
-          alt="Logo Instituto Oriente"
-          class="h-10 w-auto object-contain transition-transform group-hover:scale-105"
-        />
-        <a routerLink="/" class="flex items-center gap-2 text-gray-200 hover:text-indigo-600 transition font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Volver al Inicio
-        </a>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+      <img src="/assets/logo-white-h.png" alt="Logo" class="h-10">
+      <a routerLink="/" class="text-gray-200 hover:text-indigo-400 transition flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"   stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Volver al Inicio
+      </a>
     </div>
   </nav>
 
-  <header class="bg-linear-to-r from-indigo-600 to-blue-600 text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Resultados Fútbol</h1>
-      <p class="text-lg opacity-90 max-w-2xl mx-auto">Todos los resultados de los partidos de fútbol de los Juegos Deportivos 2026</p>
-    </div>
+  <header class="bg-linear-to-r from-indigo-700 to-blue-600 text-white py-12 text-center">
+    <h1 class="text-4xl font-bold mb-2">Resultados Deportivos 2026</h1>
+    <p class="opacity-80">Selecciona una disciplina para ver los marcadores</p>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grow w-full">
-    <div class="flex flex-wrap justify-center gap-4 mb-8">
-      <button class="px-6 py-2 bg-indigo-600 text-white rounded-full shadow-md font-medium transition hover:bg-indigo-700">Todos</button>
-      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Varonil</button>
-      <button class="px-6 py-2 bg-white text-gray-600 rounded-full shadow-sm font-medium border border-gray-100 transition hover:bg-gray-50">Feminil</button>
+  <main class="max-w-7xl mx-auto px-4 py-10 grow w-full">
+
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      @for (cat of categorias; track cat) {
+        <button
+          (click)="cambiarDeporte(cat)"
+          [class]="deporteSeleccionado === cat ? 'bg-indigo-600 text-white shadow-lg scale-105' : 'bg-white text-gray-600 border-gray-200 hover:border-indigo-300'"
+          class="px-6 py-2.5 rounded-2xl font-bold transition-all border-2 text-sm">
+          {{ cat }}
+        </button>
+      }
     </div>
 
-    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
       <div class="overflow-x-auto">
         <table class="w-full">
           <thead>
-            <tr class="bg-indigo-600 text-white">
-              <th class="px-6 py-4 text-left text-sm font-semibold">Fecha</th>
-              <th class="px-6 py-4 text-left text-sm font-semibold">Hora</th>
-              <th class="px-6 py-4 text-center text-sm font-semibold">Equipo A</th>
-              <th class="px-6 py-4 text-center text-sm font-semibold">Marcador</th>
-              <th class="px-6 py-4 text-center text-sm font-semibold">Equipo B</th>
-              <th class="px-6 py-4 text-center text-sm font-semibold">Campo</th>
-              <th class="px-6 py-4 text-center text-sm font-semibold">Rama</th>
+            <tr class="bg-gray-50 text-gray-400 text-xs uppercase tracking-widest text-left">
+              <th class="px-6 py-4">Fecha/Hora</th>
+              <th class="px-6 py-4 text-center">Competencia</th>
+              <th class="px-6 py-4 text-center">Resultado</th>
+              <th class="px-6 py-4 text-center">Sede</th>
+              <th class="px-6 py-4 text-center">Rama</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-200">
-            @for (match of [
-              { fecha: '15 May 2026', hora: '09:00 AM', equipoA: 'Primero A', marcador: '3 - 1', equipoB: 'Segundo B', campo: 1, rama: 'Varonil' },
-              { fecha: '15 May 2026', hora: '10:30 AM', equipoA: 'Tercero A', marcador: '2 - 2', equipoB: 'Cuarto B', campo: 2, rama: 'Feminil' },
-              { fecha: '16 May 2026', hora: '11:00 AM', equipoA: 'Primero B', marcador: '4 - 0', equipoB: 'Quinto A', campo: 1, rama: 'Varonil' },
-              { fecha: '16 May 2026', hora: '02:00 PM', equipoA: 'Segundo A', marcador: '1 - 3', equipoB: 'Tercero B', campo: 2, rama: 'Feminil' },
-              { fecha: '17 May 2026', hora: '09:30 AM', equipoA: 'Cuarto A', marcador: '2 - 1', equipoB: 'Primero C', campo: 1, rama: 'Varonil' },
-              { fecha: '17 May 2026', hora: '01:00 PM', equipoA: 'Quinto B', marcador: '0 - 2', equipoB: 'Segundo C', campo: 2, rama: 'Feminil' }
-            ]; track $index) {
-              <tr class="hover:bg-gray-50 transition-colors">
-                <td class="px-6 py-4 text-sm text-gray-900 font-medium">{{ match.fecha }}</td>
-                <td class="px-6 py-4 text-sm text-gray-600">{{ match.hora }}</td>
-                <td class="px-6 py-4 text-sm text-center text-gray-900 font-semibold">{{ match.equipoA }}</td>
-                <td class="px-6 py-4 text-sm text-center">
-                  <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full font-bold text-lg">{{ match.marcador }}</span>
+          <tbody class="divide-y divide-gray-100">
+            @for (match of resultadosFiltrados; track $index) {
+              <tr class="hover:bg-indigo-50/30 transition-colors group">
+                <td class="px-6 py-5">
+                  <div class="text-sm font-bold text-gray-900">{{ match.fecha }}</div>
+                  <div class="text-xs text-gray-500">{{ match.hora }}</div>
                 </td>
-                <td class="px-6 py-4 text-sm text-center text-gray-900 font-semibold">{{ match.equipoB }}</td>
-                <td class="px-6 py-4 text-sm text-center">
-                  <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Campo {{ match.campo }}</span>
+                <td class="px-6 py-5 text-center">
+                  <div class="flex flex-col md:flex-row items-center justify-center gap-2">
+                    <span class="font-semibold text-gray-800">{{ match.equipoA }}</span>
+                    <span class="text-[10px] text-gray-400 font-bold italic">VS</span>
+                    <span class="font-semibold text-gray-800">{{ match.equipoB }}</span>
+                  </div>
                 </td>
-                <td class="px-6 py-4 text-sm text-center">
-                  <span [class]="match.rama === 'Varonil' ? 'bg-green-100 text-green-700' : 'bg-pink-100 text-pink-700'" class="px-3 py-1 rounded-full font-medium">
+                <td class="px-6 py-5 text-center">
+                  <span class="bg-indigo-600 text-white px-4 py-1.5 rounded-xl font-mono font-bold shadow-sm">
+                    {{ match.marcador }}
+                  </span>
+                </td>
+                <td class="px-6 py-5 text-center">
+                  <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-lg">{{ match.sede }}</span>
+                </td>
+                <td class="px-6 py-5 text-center">
+                  <span [class]="match.rama === 'Varonil' ? 'text-blue-600' : (match.rama === 'Feminil' ? 'text-pink-600' : 'text-purple-600')"
+                        class="text-[10px] font-black uppercase">
                     {{ match.rama }}
                   </span>
                 </td>
               </tr>
             } @empty {
               <tr>
-                <td colspan="7" class="px-6 py-12 text-center text-gray-500">
-                  <p class="text-lg font-medium">No hay resultados disponibles</p>
+                <td colspan="5" class="px-6 py-20 text-center">
+                  <div class="text-gray-300 mb-2">
+                    <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
+                  </div>
+                  <p class="text-gray-500 font-medium">Próximamente resultados de {{ deporteSeleccionado }}</p>
                 </td>
               </tr>
             }
@@ -84,16 +85,10 @@
       </div>
     </div>
   </main>
-
-  <footer class="bg-gray-900 text-gray-400 py-12">
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mb-2">Instituto Oriente</h2>
-        <p class="text-sm">Excelencia Académica • Innovación • Valores</p>
-      </div>
-      <div class="border-t border-gray-800 pt-8">
-        <p>&copy; 2026 Instituto Oriente. Todos los derechos reservados.</p>
-      </div>
+      <p>&copy; 2026 Instituto Oriente. Todos los derechos reservados.</p>
     </div>
   </footer>
 </div>
