@@ -46,12 +46,12 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (post of [
-        { cat: 'Fútbol', title: 'Final de Fútbol: Instituto Oriente campeón', img: 'https://placehold.co/600x400', date: '20 May 2026' },
-        { cat: 'Atletismo', title: 'Récord escolar en 100m planos', img: 'https://placehold.co/600x400', date: '19 May 2026' },
-        { cat: 'Baloncesto', title: 'Semifinales: Emoción en cada canasta', img: 'https://placehold.co/600x400', date: '18 May 2026' },
-        { cat: 'Voleibol', title: 'Damas avanzan a la final', img: 'https://placehold.co/600x400', date: '17 May 2026' },
-        { cat: 'Fútbol', title: 'Goleada histórica en semifinales', img: 'https://placehold.co/600x400', date: '16 May 2026' },
-        { cat: 'Atletismo', title: 'Relevos 4x100: La mejor actuación', img: 'https://placehold.co/600x400', date: '15 May 2026' }
+        { cat: 'Fútbol', title: 'Final de Fútbol: Instituto Oriente campeón', img: '/assets/futbol.jpg', date: '20 May 2026' },
+        { cat: 'Atletismo', title: 'Récord escolar en 100m planos', img: '/assets/atletismo.jpg', date: '19 May 2026' },
+        { cat: 'Baloncesto', title: 'Semifinales: Emoción en cada canasta', img: '/assets/baloncesto.jpg', date: '18 May 2026' },
+        { cat: 'Voleibol', title: 'Damas avanzan a la final', img: '/assets/voleibol-damas.jpg', date: '17 May 2026' },
+        { cat: 'Fútbol', title: 'Goleada histórica en semifinales', img: '/assets/futbol-goleada.jpg', date: '16 May 2026' },
+        { cat: 'Atletismo', title: 'Relevos 4x100: La mejor actuación', img: '/assets/atletismo-relevos.jpg', date: '15 May 2026' }
       ]; track $index) {
         <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
           <div class="relative h-48 overflow-hidden bg-gray-200">

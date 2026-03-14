@@ -40,14 +40,14 @@
 
     <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
       @for (item of [
-  { title: 'Ceremonia de Inauguración', cat: 'Inauguración', img: 'https://placehold.co/600x400' },
-  { title: 'Competencia de Atletismo', cat: 'Día 1', img: 'https://placehold.co/600x400' },
-  { title: 'Presentación de Porras', cat: 'Porras', img: 'https://placehold.co/800x800' },
-  { title: 'Torneo de Fútbol', cat: 'Deportes', img: 'https://placehold.co/800x500' },
-  { title: 'Partido de Baloncesto', cat: 'Día 2', img: 'https://placehold.co/600x400' },
-  { title: 'Misa de Inicio de Juegos', cat: 'Misa de Inicio', img: 'https://placehold.co/800x1000' },
-  { title: 'Premiación Final', cat: 'Clausura', img: 'https://placehold.co/800x600' },
-  { title: 'Fuego Olímpico', cat: 'Inauguración', img: 'https://placehold.co/800x600' }
+  { title: 'Ceremonia de Inauguración', cat: 'Inauguración', img: '/assets/inauguracion.jpg' },
+  { title: 'Competencia de Atletismo', cat: 'Día 1', img: '/assets/atletismo-competencia.jpg' },
+  { title: 'Presentación de Porras', cat: 'Porras', img: '/assets/porras.jpg' },
+  { title: 'Torneo de Fútbol', cat: 'Deportes', img: '/assets/futbol-torneo.jpg' },
+  { title: 'Partido de Baloncesto', cat: 'Día 2', img: '/assets/baloncestoG.jpg' },
+  { title: 'Misa de Inicio de Juegos', cat: 'Misa de Inicio', img: '/assets/misa-inicio.jpg' },
+  { title: 'Premiación Final', cat: 'Clausura', img: '/assets/clausura.jpg' },
+  { title: 'Fuego Olímpico', cat: 'Inauguración', img: '/assets/fuego-olimpico.jpg' }
 ]; track $index) {
   <div class="relative group overflow-hidden rounded-2xl bg-gray-200 break-inside-avoid shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer">
     <img [src]="item.img" [alt]="item.title" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
